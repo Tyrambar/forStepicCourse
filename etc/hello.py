@@ -1,6 +1,7 @@
-from cgi import parse_qs
+#from cgi import parse_qs
 
-def application(envir, start_resp):
-	start_resp('200 OK', [('Content-Type', 'text/plain')])
-	qs = parse_qs(envir['QUERY_STRING'])
-	return ['{}={}<br>'.format(res, qs[res][0]) for res in qs]
+def app(environ, start_response):
+	start_response('200 OK', [('Content-Type', 'text/plain')])
+	return [bytes(res + '\n', 'ascii') for res in environ['QUERY_STRING'].split('&')]
+
+bind = '0.0.0.0:8080'
