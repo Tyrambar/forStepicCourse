@@ -10,7 +10,8 @@ sudo pip3 install --force-reinstall setuptools
 
 sudo pip3 install django==2.1
 sudo pip3 install gunicorn==19.5
-sudo apt install sqlite3
+sudo pip3 install mysqlclient==1.3.7
+#sudo apt install sqlite3
 
 #https://github.com/Tyrambar/forStepicCourse.git
 #INSTALLED_APPS = ['ask', 'qa', ..]
